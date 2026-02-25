@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="msvalidate.01" content="F53C175A0435A6929EB04A46AC19EBB2" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jet Lag Symptoms Checker & Recovery Calculator | Beat Jet Lag Fast</title>
+    <meta name="description" content="Free jet lag symptoms checker and flight recovery calculator. Get personalized tips based on your travel details. Calculate your jet lag recovery time instantly.">
+    <meta name="keywords" content="jet lag symptoms checker, jet lag calculator, time zone adjustment, travel fatigue relief, jet lag recovery">
+    <link rel="canonical" href="https://jetlabs.shop/" />
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Jet Lag Symptoms Checker & Recovery Calculator">
+    <meta property="og:description" content="Calculate your jet lag recovery time and get personalized tips instantly.">
+    <meta property="og:url" content="https://jetlabs.shop">
+    <meta property="og:site_name" content="JetLabs">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Jet Lag Symptoms Checker & Recovery Calculator">
+    <meta name="twitter:description" content="Calculate your jet lag recovery time and get personalized tips instantly.">
+
+    <!-- JSON-LD: WebApplication -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "JetLabs - Jet Lag Helper",
+      "description": "Calculate jet lag recovery time and check symptoms with personalized recovery plans",
+      "url": "https://jetlabs.shop",
+      "applicationCategory": "HealthApplication",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "JetLabs",
+        "url": "https://jetlabs.shop"
+      }
+    }
+    </script>
+
+    <!-- JSON-LD: FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How long does jet lag last?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Jet lag typically lasts 1-2 days per time zone crossed. Eastward travel is harder to recover from than westward. Factors like age, sleep quality, and light exposure affect recovery time. Use our jet lag calculator for a personalized estimate."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are the most common jet lag symptoms?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Common jet lag symptoms include fatigue, insomnia, difficulty concentrating (brain fog), digestive issues, mood changes, and daytime sleepiness. Symptoms are worse when crossing more time zones and when traveling eastward."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does melatonin help with jet lag?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, research shows that 0.5-1mg of melatonin taken 30 minutes before your target bedtime can help reset your circadian rhythm. It's most effective when crossing 5+ time zones. Timing is more important than dose."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why is jet lag worse flying east?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Flying east requires advancing your body clock, which is harder because the human circadian rhythm naturally runs slightly longer than 24 hours. Your body finds it easier to delay sleep (westward) than to fall asleep earlier (eastward)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How can I prevent jet lag before a flight?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Start shifting your sleep schedule 2-3 days before departure. Get strategic light exposure, stay hydrated, avoid alcohol on the flight, and use the WellRest app for a personalized pre-flight adjustment plan."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="/" class="nav-logo">✈️ JetLabs</a>
+            <div class="nav-links">
+                <a href="/#symptoms-checker">Symptoms Checker</a>
+                <a href="/#flight-calculator">Calculator</a>
+                <a href="/blog/">Blog</a>
+                <a href="/#app-download" class="nav-cta">Get App</a>
+            </div>
+            <button class="nav-toggle" aria-label="Toggle menu" onclick="document.querySelector('.nav-links').classList.toggle('active')">☰</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container">
+            <h1>Jet Lag Symptoms Checker — Find Relief Fast</h1>
+            <p class="hero-subtitle">Calculate your recovery time and get personalized tips based on your travel schedule</p>
+            <div class="cta-buttons">
+                <button onclick="scrollToSection('symptoms-checker')" class="btn btn-primary">Check Your Symptoms</button>
+                <button onclick="scrollToSection('flight-calculator')" class="btn btn-secondary">Calculate Recovery Time</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Symptoms Checker Section -->
+    <section id="symptoms-checker" class="section">
+        <div class="container">
+            <h2>Jet Lag Symptoms Checker</h2>
+            <p class="section-intro">Answer 5 quick questions to assess your jet lag severity</p>
+            
+            <form id="symptomsForm" class="symptoms-form">
+                <!-- Question 1 -->
+                <div class="question-block">
+                    <label class="question-label">1. How many time zones did you cross?</label>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="zones" value="2" required>
+                            <span>1-2 zones</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="zones" value="4">
+                            <span>3-5 zones</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="zones" value="6">
+                            <span>6+ zones</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 2 -->
+                <div class="question-block">
+                    <label class="question-label">2. Which direction did you travel?</label>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="direction" value="3" required>
+                            <span>East (harder to adjust)</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="direction" value="1">
+                            <span>West (easier to adjust)</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="direction" value="2">
+                            <span>Not sure</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 3 -->
+                <div class="question-block">
+                    <label class="question-label">3. How would you rate your sleep quality since arrival?</label>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="sleep" value="3" required>
+                            <span>Poor (barely sleeping)</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="sleep" value="2">
+                            <span>Fair (some sleep)</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="sleep" value="1">
+                            <span>Good (sleeping well)</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 4 -->
+                <div class="question-block">
+                    <label class="question-label">4. Which symptoms are you experiencing? (Select all that apply)</label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="symptoms" value="1">
+                            <span>Extreme fatigue</span>
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="symptoms" value="1">
+                            <span>Insomnia or sleep problems</span>
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="symptoms" value="1">
+                            <span>Digestive issues</span>
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="symptoms" value="1">
+                            <span>Brain fog / difficulty concentrating</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 5 -->
+                <div class="question-block">
+                    <label class="question-label">5. When did you arrive at your destination?</label>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="arrival" value="3" required>
+                            <span>Less than 24 hours ago</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="arrival" value="2">
+                            <span>1-3 days ago</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="arrival" value="1">
+                            <span>4+ days ago</span>
+                        </label>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-large">Get My Results</button>
+            </form>
+
+            <!-- Results Display -->
+            <div id="symptomsResults" class="results-box" style="display: none;">
+                <div id="severityBadge" class="severity-badge"></div>
+                <h3>Your Personalized Tips</h3>
+                <ul id="symptomsTips" class="tips-list"></ul>
+                <div class="app-cta">
+                    <p><strong>Want a complete 7-day recovery plan?</strong></p>
+                    <button onclick="scrollToSection('app-download')" class="btn btn-primary">Download Our Free iOS App</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Flight Calculator Section -->
+    <section id="flight-calculator" class="section section-alt">
+        <div class="container">
+            <h2>Jet Lag Recovery Calculator</h2>
+            <p class="section-intro">Calculate your estimated recovery time based on your flight details. <a href="/blog/jet-lag-calculator">Learn how this works →</a></p>
+            
+            <form id="calculatorForm" class="calculator-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="origin">From (City/Airport)</label>
+                        <input type="text" id="origin" name="origin" placeholder="e.g., New York JFK" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="destination">To (City/Airport)</label>
+                        <input type="text" id="destination" name="destination" placeholder="e.g., Tokyo NRT" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="originTz">Origin Timezone</label>
+                        <select id="originTz" name="originTz" required>
+                            <option value="">Select timezone</option>
+                            <option value="America/New_York">Eastern Time (ET)</option>
+                            <option value="America/Chicago">Central Time (CT)</option>
+                            <option value="America/Denver">Mountain Time (MT)</option>
+                            <option value="America/Los_Angeles">Pacific Time (PT)</option>
+                            <option value="Europe/London">London (GMT)</option>
+                            <option value="Europe/Paris">Paris (CET)</option>
+                            <option value="Asia/Dubai">Dubai (GST)</option>
+                            <option value="Asia/Singapore">Singapore (SGT)</option>
+                            <option value="Asia/Tokyo">Tokyo (JST)</option>
+                            <option value="Asia/Shanghai">Shanghai (CST)</option>
+                            <option value="Australia/Sydney">Sydney (AEDT)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="destTz">Destination Timezone</label>
+                        <select id="destTz" name="destTz" required>
+                            <option value="">Select timezone</option>
+                            <option value="America/New_York">Eastern Time (ET)</option>
+                            <option value="America/Chicago">Central Time (CT)</option>
+                            <option value="America/Denver">Mountain Time (MT)</option>
+                            <option value="America/Los_Angeles">Pacific Time (PT)</option>
+                            <option value="Europe/London">London (GMT)</option>
+                            <option value="Europe/Paris">Paris (CET)</option>
+                            <option value="Asia/Dubai">Dubai (GST)</option>
+                            <option value="Asia/Singapore">Singapore (SGT)</option>
+                            <option value="Asia/Tokyo">Tokyo (JST)</option>
+                            <option value="Asia/Shanghai">Shanghai (CST)</option>
+                            <option value="Australia/Sydney">Sydney (AEDT)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="departure">Departure Date & Time (Local)</label>
+                        <input type="datetime-local" id="departure" name="departure" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="arrival">Arrival Date & Time (Local)</label>
+                        <input type="datetime-local" id="arrival" name="arrival" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="slept">Did you sleep on the flight?</label>
+                        <select id="slept" name="slept" required>
+                            <option value="">Select option</option>
+                            <option value="true">Yes, slept well</option>
+                            <option value="false">No, barely slept</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="age">Your Age Range</label>
+                        <select id="age" name="age" required>
+                            <option value="">Select age range</option>
+                            <option value="18-30">18-30 years</option>
+                            <option value="31-50">31-50 years</option>
+                            <option value="51-65">51-65 years</option>
+                            <option value="66+">66+ years</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-large">Calculate My Recovery Time</button>
+            </form>
+
+            <!-- Calculator Results -->
+            <div id="calculatorResults" class="results-box" style="display: none;">
+                <div class="result-stats">
+                    <div class="stat-item">
+                        <span class="stat-label">Time Difference</span>
+                        <span id="timeDiff" class="stat-value">-</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Zones Crossed</span>
+                        <span id="zonesCrossed" class="stat-value">-</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Direction</span>
+                        <span id="travelDirection" class="stat-value">-</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Recovery Time</span>
+                        <span id="recoveryDays" class="stat-value">-</span>
+                    </div>
+                </div>
+                <div id="calcSeverityBadge" class="severity-badge"></div>
+                <h3>Your Recovery Tips</h3>
+                <ul id="calcTips" class="tips-list"></ul>
+                <div class="app-cta">
+                    <p><strong>Get a detailed day-by-day recovery plan</strong></p>
+                    <button onclick="scrollToSection('app-download')" class="btn btn-primary">Download Free iOS App</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="section">
+        <div class="container">
+            <h2>Frequently Asked Questions About Jet Lag</h2>
+            <div class="faq-list">
+                <details class="faq-item">
+                    <summary>How long does jet lag last?</summary>
+                    <p>Jet lag typically lasts 1-2 days per time zone crossed. Eastward travel is harder to recover from than westward because your body finds it easier to stay up later than go to sleep earlier. Factors like age, sleep quality, and strategic light exposure all affect recovery time. Use our <a href="/#flight-calculator">jet lag calculator</a> for a personalized estimate based on your specific flight.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>What are the most common jet lag symptoms?</summary>
+                    <p>The most common jet lag symptoms include extreme fatigue, insomnia or disrupted sleep, difficulty concentrating (brain fog), digestive issues like nausea or loss of appetite, mood changes, and daytime sleepiness. Symptoms tend to be worse when crossing more time zones and when traveling eastward. Check your severity with our <a href="/#symptoms-checker">symptoms checker</a>.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Does melatonin help with jet lag?</summary>
+                    <p>Yes, research shows that low-dose melatonin (0.5-1mg) taken 30 minutes before your target bedtime can significantly help reset your <a href="/blog/circadian-rhythm-explained">circadian rhythm</a>. It's most effective when crossing 5 or more time zones. The timing of when you take melatonin matters more than the dose — taking it at the right time relative to your destination's time zone is key.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Why is jet lag worse flying east?</summary>
+                    <p>Flying east requires advancing your body clock (going to sleep earlier), which is harder because the human circadian rhythm naturally runs slightly longer than 24 hours — roughly 24.2 hours. This means your body naturally prefers to delay sleep rather than advance it. Learn more about <a href="/blog/jet-lag-east-vs-west">flying east vs west</a> and how direction affects your recovery.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>How can I prevent jet lag before a flight?</summary>
+                    <p>The most effective prevention strategies include gradually shifting your sleep schedule 2-3 days before departure (30-60 minutes per day toward your destination time), getting strategic light exposure at specific times, staying well hydrated, avoiding alcohol on the flight, and eating meals at your destination's meal times. The <a href="https://apps.apple.com/ph/app/wellrest-sleep-jet-lag-app/id6755243344">WellRest app</a> creates a personalized pre-flight adjustment plan for your specific route.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- Email Capture Section -->
+    <section id="email-capture" class="section section-alt">
+        <div class="container">
+            <div class="email-box">
+                <h2>Get Jet Lag Tips in Your Inbox</h2>
+                <p>Join travelers who receive expert tips on beating jet lag</p>
+                <form id="emailForm" class="email-form">
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+                <p id="emailMessage" class="form-message"></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- App Download Section -->
+    <section id="app-download" class="section">
+        <div class="container app-section">
+            <h2>Download the WellRest iOS App — Free</h2>
+            <p class="section-intro">Get personalized day-by-day recovery plans, sleep tracking, and reminders</p>
+            
+            <div class="app-features">
+                <div class="feature">
+                    <h3>📅 Daily Recovery Plans</h3>
+                    <p>Custom schedules tailored to your flight and circadian rhythm</p>
+                </div>
+                <div class="feature">
+                    <h3>💡 Smart Reminders</h3>
+                    <p>Never miss light exposure or meal timing windows</p>
+                </div>
+                <div class="feature">
+                    <h3>📊 Track Progress</h3>
+                    <p>Monitor your recovery day by day with sleep quality tracking</p>
+                </div>
+            </div>
+
+            <div class="app-badges">
+                <a href="https://apps.apple.com/ph/app/wellrest-sleep-jet-lag-app/id6755243344" class="app-badge-link">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='60'%3E%3Crect width='200' height='60' fill='%23000' rx='8'/%3E%3Ctext x='100' y='35' fill='%23fff' font-size='18' text-anchor='middle' font-family='Arial'%3EDownload on iOS%3C/text%3E%3C/svg%3E" alt="Download WellRest on the App Store">
+                </a>
+                <p class="coming-soon">Android version coming soon!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Teaser Section -->
+    <section id="blog-teaser" class="section section-alt">
+        <div class="container">
+            <h2>Latest from the JetLabs Blog</h2>
+            <p class="section-intro">Science-backed guides to help you sleep better and travel smarter</p>
+            <div class="blog-grid">
+                <a href="/blog/jet-lag-calculator" class="blog-card">
+                    <span class="blog-tag">Tool Guide</span>
+                    <h3>Jet Lag Calculator: How Long Will Your Recovery Take?</h3>
+                    <p>Enter your flight details and get a science-based estimate of your recovery timeline, plus personalized tips.</p>
+                </a>
+                <!-- Future article cards will go here -->
+            </div>
+            <div style="text-align: center; margin-top: 32px;">
+                <a href="/blog/" class="btn btn-secondary" style="display: inline-block; text-decoration: none;">Read All Articles →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="/">Home</a>
+                <a href="/blog/">Blog</a>
+                <a href="/#symptoms-checker">Symptoms Checker</a>
+                <a href="/#flight-calculator">Calculator</a>
+                <a href="https://apps.apple.com/ph/app/wellrest-sleep-jet-lag-app/id6755243344">WellRest App</a>
+            </div>
+            <p>&copy; 2025 JetLabs. All rights reserved.</p>
+            <p class="disclaimer">This tool provides general wellness information and is not a substitute for professional medical advice.</p>
+        </div>
+    </footer>
+
+    <script src="/app.js"></script>
+</body>
+</html>
