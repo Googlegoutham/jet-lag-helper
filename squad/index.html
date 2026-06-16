@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Join a Scrollift Squad</title>
+  <style>
+    :root { --orange:#FC4C02; --bg:#141413; --surface:#242422; --text:#fff; --muted:#9b9b93; }
+    * { box-sizing:border-box; margin:0; padding:0; -webkit-font-smoothing:antialiased; }
+    body { background:var(--bg); color:var(--text); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+           min-height:100vh; display:flex; align-items:center; justify-content:center; padding:24px; }
+    .card { max-width:380px; width:100%; text-align:center; }
+    .logo { font-size:22px; font-weight:800; letter-spacing:-0.02em; margin-bottom:28px; }
+    h1 { font-size:30px; font-weight:800; line-height:1.15; margin-bottom:12px; }
+    .code { display:inline-block; font-family:ui-monospace,monospace; font-weight:700; font-size:18px;
+            background:rgba(252,76,2,0.18); color:#fff; padding:8px 16px; border-radius:999px; margin:8px 0 24px; letter-spacing:2px; }
+    p { color:var(--muted); font-size:15px; line-height:1.5; margin-bottom:28px; }
+    .btn { display:block; width:100%; padding:16px; border-radius:14px; font-size:17px; font-weight:700;
+           text-decoration:none; margin-bottom:12px; border:none; cursor:pointer; }
+    .btn-primary { background:var(--orange); color:#fff; }
+    .btn-secondary { background:var(--surface); color:#fff; }
+    .hint { font-size:13px; color:var(--muted); margin-top:8px; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="logo">Scrollift</div>
+    <h1>Join the squad</h1>
+    <div class="code" id="code">—</div>
+    <p>Earn screen time by working out. Beat your friends and keep each other accountable.</p>
+
+    <a class="btn btn-primary" id="openApp" href="#">Open in Scrollift</a>
+    <a class="btn btn-secondary" id="getApp" href="#">Get the app</a>
+    <div class="hint" id="hint"></div>
+  </div>
+
+  <script>
+    // Code is the last path segment: jetlabs.shop/squad/SQXXXXX
+    const parts = location.pathname.split('/').filter(Boolean);
+    const code = (parts[parts.length - 1] || '').toUpperCase();
+    const APP_STORE = 'https://apps.apple.com/app/scrollift/id6738980498';
+    const SCHEME = 'scrollift://squad/' + code;
+
+    document.getElementById('code').textContent = code || 'SQUAD';
+
+    // Copy the code so the app can pick it up on first launch (deferred deep link).
+    function copyCode() { try { navigator.clipboard.writeText(code); } catch (e) {} }
+
+    const openApp = document.getElementById('openApp');
+    openApp.href = SCHEME;
+    openApp.addEventListener('click', function () { copyCode(); });
+
+    const getApp = document.getElementById('getApp');
+    getApp.href = APP_STORE;
+    getApp.addEventListener('click', function (e) { copyCode(); });
+
+    // Auto-attempt: try to open the app; if it isn't installed, nothing happens
+    // and the user can tap "Get the app". Copy the code up front for the deferred path.
+    copyCode();
+    if (code) {
+      setTimeout(function () { window.location.href = SCHEME; }, 300);
+    }
+  </script>
+</body>
+</html>
