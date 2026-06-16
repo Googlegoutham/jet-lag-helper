@@ -49,7 +49,10 @@
 
     document.getElementById('code').textContent = code || 'SQUAD';
 
-    function copyCode() { try { navigator.clipboard.writeText(code); } catch (e) {} }
+    // Copy the full invite URL so the iOS app can pick it up on first launch
+    // (deferred deep link) via UIPasteboard.url.
+    var INVITE_URL = code ? ('https://jetlabs.shop/squad/' + code) : '';
+    function copyCode() { try { if (INVITE_URL) navigator.clipboard.writeText(INVITE_URL); } catch (e) {} }
 
     var openApp = document.getElementById('openApp');
     openApp.href = SCHEME;
