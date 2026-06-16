@@ -35,31 +35,33 @@
   </div>
 
   <script>
-    // Code is the last path segment: jetlabs.shop/squad/SQXXXXX
-    const parts = location.pathname.split('/').filter(Boolean);
-    const code = (parts[parts.length - 1] || '').toUpperCase();
-    const APP_STORE = 'https://apps.apple.com/app/scrollift/id6738980498';
-    const SCHEME = 'scrollift://squad/' + code;
+    // Code comes from ?c=SQXXXXX (preferred) or the last path segment as a fallback.
+    function readCode() {
+      var q = new URLSearchParams(location.search).get('c');
+      if (q) return q.toUpperCase();
+      var parts = location.pathname.split('/').filter(Boolean);
+      var last = (parts[parts.length - 1] || '').toUpperCase();
+      return last === 'SQUAD' ? '' : last;
+    }
+    var code = readCode();
+    var APP_STORE = 'https://apps.apple.com/app/scrollift/id6738980498';
+    var SCHEME = 'scrollift://squad/' + code;
 
     document.getElementById('code').textContent = code || 'SQUAD';
 
-    // Copy the code so the app can pick it up on first launch (deferred deep link).
     function copyCode() { try { navigator.clipboard.writeText(code); } catch (e) {} }
 
-    const openApp = document.getElementById('openApp');
+    var openApp = document.getElementById('openApp');
     openApp.href = SCHEME;
-    openApp.addEventListener('click', function () { copyCode(); });
+    openApp.addEventListener('click', copyCode);
 
-    const getApp = document.getElementById('getApp');
+    var getApp = document.getElementById('getApp');
     getApp.href = APP_STORE;
-    getApp.addEventListener('click', function (e) { copyCode(); });
+    getApp.addEventListener('click', copyCode);
 
-    // Auto-attempt: try to open the app; if it isn't installed, nothing happens
-    // and the user can tap "Get the app". Copy the code up front for the deferred path.
+    // Try to open the app immediately; if not installed, the user taps "Get the app".
     copyCode();
-    if (code) {
-      setTimeout(function () { window.location.href = SCHEME; }, 300);
-    }
+    if (code) { setTimeout(function () { window.location.href = SCHEME; }, 300); }
   </script>
 </body>
 </html>
